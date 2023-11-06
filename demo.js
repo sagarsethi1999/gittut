@@ -64,7 +64,8 @@ console.log(newDiv);
  var container  = document.querySelector('header .container');
  var h1 = document.querySelector('header h1');
 container.insertBefore(newDiv,h1);
-newDiv.style.fontSize = '30px';
+newDiv.style.fontSize = '100px';
+newDiv.style.fontWeight='bold';
 console.log(newDiv);
 
 var newList= document.createElement('li');

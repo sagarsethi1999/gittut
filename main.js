@@ -36,11 +36,15 @@ function addItem(e){
   li.appendChild(deleteBtn);
 
  
-
+ //adding edit button
   var editBtn =document.createElement('button');
   editBtn.className = 'btn-sm float-right';
-  editBtn.appendChild(document.createTextNode('+'));
+  editBtn.appendChild(document.createTextNode('EDIT'));
   li.appendChild(editBtn);
+
+  //appending the decription 
+  var descr = document.getElementById('desc').value;
+  li.appendChild(document.createTextNode(descr));
 
    // Append li to list
    itemList.appendChild(li);
@@ -65,7 +69,9 @@ function filterItems(e){
   // Convert to an array
   Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    var descript = item.lastChild.textContent;
+    //console.log(descript);
+    if((itemName.toLowerCase().indexOf(text) && descript.toLowerCase().indexOf(text)) != -1    ){
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
